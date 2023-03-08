@@ -1,0 +1,154 @@
+.ymap {
+  width: 100%;
+  height: 100%;
+  height: 450px;
+}
+
+.ymaps-2-1-79-copyrights-pane {
+  display: none;
+}
+
+.contacts {
+
+  &__container {
+    position: relative;
+  }
+  
+  &__field {
+    position: absolute;
+    top: 50px;
+    left: 200px;
+    padding: 30px 35px;
+    height: 100%;
+    max-height: 350px;
+    border-radius: $radius-cards;
+    background-color: $white;
+  }
+
+  &__title {
+    margin-bottom: 15px;
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  
+  &__callback {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__callback-item {
+    position: relative;
+    padding-left: 30px;
+    line-height: 24px;
+
+    &:not(:last-child) {
+      margin-bottom: 15px;  
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+.phone {
+  &:before {
+    background-image: url("../img/phone.svg");
+  }
+}
+
+.email {
+  &:before {
+    background-image: url("../img/mail.svg");
+  }
+}
+
+.address {
+  &:before {
+    left: 3px;
+    background-image: url("../img/point.svg");
+  }
+}
+
+.messengers {
+  position: absolute;
+  bottom: 30px;
+  display: flex;
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 15px;
+    }
+  }
+
+  &__link {
+    transition: color 0.15s ease-in-out;
+    &:hover {
+      color: $blue;
+      transition: color 0.15s ease-in-out;
+    }
+  }
+}
+
+@media (max-width: 1439px) {
+  .contacts {
+    &__field {
+      top: 42px;
+      left: 64px;
+      padding: 25px 30px;
+      width: 100%;
+      max-width: 310px;
+      max-height: 320px;
+    }
+  }
+
+  .ymap {
+    height: 400px;
+  }
+}
+
+@media (max-width: 767px) {
+  .contacts {
+    &__container {
+      display: flex;
+      flex-direction: column-reverse;
+      padding: 0;
+    }
+
+    &__title {
+      margin-bottom: 20px;
+      font-size: 30px;
+      line-height: 37px;
+    }
+
+    &__field {
+      position: relative;
+      padding: 0 15px;
+      top: 0;
+      left: 0;
+      max-width: 100%;
+      margin-bottom: 30px;
+      background-color: transparent;
+    }
+
+    &__callback {
+      margin-bottom: 15px;
+    }
+  }
+
+  .ymap {
+    height: 500px;
+  }
+
+  .messengers {
+    position: relative;
+    bottom: 0;
+}
+}

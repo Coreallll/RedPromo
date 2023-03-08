@@ -1,0 +1,420 @@
+.hero {
+  margin-bottom: $section;
+}
+
+.myhome {
+  margin-bottom: 20px;
+  border-radius: $radius-cards;
+  color: $white;
+  &__slide {
+    position: relative;
+    padding: 45px 60px;
+    width: 100%;
+    height: 100%;
+    min-height: 450px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__pic {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    img {
+      width: 100%;
+      border-radius: $radius-cards;
+    }
+  }
+
+  &__title {
+    margin-bottom: 15px;
+    max-width: 56%;
+    font-size: 45px;
+    font-weight: 600;
+    line-height: 52px;
+  }
+
+  &__descr {
+    max-width: 51%;
+    line-height: 22px;
+  }
+  
+  &__navigation {
+    position: absolute;
+    right: 60px;
+    bottom: 47px;
+    left: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  &__pagination {
+    position: relative;
+    bottom: 0 !important;
+    width: unset !important;
+
+    .swiper-pagination-bullet {
+      width: 7px;
+      height: 7px;
+      margin: 0 var(--swiper-pagination-bullet-horizontal-gap, 8px) !important;
+      background-color: $white;
+      opacity: 0.5;
+
+      &:first-child {
+        margin-left: 0 !important;
+      }
+    }
+    .swiper-pagination-bullet-active {
+      opacity: 1;
+    }
+
+  }
+}
+
+
+
+.arrows-navigation {
+  display: flex;
+}
+
+.arrow-nav {
+  position: relative;
+  top: 0;
+  right: 0;
+  left: 0;
+  margin: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: $white;
+  box-shadow: 0 0 10px rgba(51, 51, 51, 0.1);
+
+  &:after {
+    position: relative;
+    content: '';
+    width: 7px;
+    height: 7px;
+    border: solid $main;
+    border-width: 0 1.5px 1.5px 0;
+    transition: border-color 0.15s ease-in-out;
+  }
+  &:hover {
+    &:after {
+      border-color: $blue;
+      transition: border-color 0.15s ease-in-out;
+    }
+  }
+
+  &--prev {
+    margin-right: 10px;
+    &:after {
+      left: 1px;
+      transform:  rotate(135deg);
+    }
+  }
+
+  &--next {
+    &:after {
+      right: 1px;
+      transform:  rotate(-45deg);
+    }
+  }
+}
+
+.complex-cards-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 230px);
+  gap: 20px;
+}
+
+.complex-card  {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px 40px;
+  border-radius: $radius-cards;
+  background-color: $back-cards;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  z-index: 1;
+
+  &__title {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+  }
+
+  &__descr {
+    position: relative;
+    padding-left: 23px;
+    max-width: 237px;
+    line-height: 24px;
+    opacity: 0.5;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 12px;
+      height: 16px;
+      background: url("../img/point.svg") no-repeat;
+    }
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 30px;
+    right: -70px;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    z-index: -1;
+  }
+
+  &--1 {
+    &:before {
+      content: '';
+      position: absolute;
+      top: -62px;
+      right: -72px;
+      width: 304px;
+      height: 323px;
+      background: url("../img/complex-1.png") no-repeat;
+    }
+
+    &:after {
+      background-color: $blue;
+    }
+  }
+
+  &--2 {
+    &:before {
+      content: '';
+      position: absolute;
+      top: 13px;
+      right: -27px;
+      width: 235px;
+      height: 224px;
+      background: url("../img/complex-2.png") no-repeat;
+    }
+    &:after {
+      background-color: #E5359F;
+    }
+  }
+
+  &--3 {
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: -40px;
+      width: 251px;
+      height: 236px;
+      background: url("../img/complex-3.png") no-repeat;
+    }
+    &:after {
+      background-color: #FCD744;
+    }
+  }
+
+  &--4 {
+    &:before {
+      content: '';
+      position: absolute;
+      top: 13px;
+      right: -30px;
+      width: 248px;
+      height: 248px;
+      background: url("../img/complex-4.png") no-repeat;
+    }
+    &:after {
+      background-color: #54B263;
+    }
+  }
+}
+
+@media (max-width: 1439px) {
+
+  .hero {
+    margin-bottom: $section-md;
+  }
+
+  .myhome {
+
+    &__slide {
+      padding: 30px 45px;
+      min-height: 350px;
+    }
+
+    &__title {
+      margin-bottom: 10px;
+      max-width: 82%;
+      font-size: 36px;
+      line-height: 41px;
+    }
+
+    &__descr {
+      max-width: 51%;
+    }
+
+    &__navigation {
+      right: 45px;
+      bottom: 22px;
+      left: 42px;
+    }
+  }
+
+  .complex-cards-wrapper {
+    grid-template-rows: repeat(2, 300px);
+  }
+
+  .complex-card {
+    padding: 25px 30px;
+    justify-content: unset;
+
+    &__title {
+      margin-bottom: 5px;
+    }
+
+    &:after {
+      top: 112px;
+      right: -61px;
+    }
+
+    &--1 {
+      &:before {
+        top: 62px;
+        right: 0;
+        width: 256px;
+        height: 100%;
+      }
+    }
+
+    &--2 {
+      &:before {
+        top: 96px;
+        right: 14px;
+        width: 190px;
+        height: 213px;
+      }
+    }
+
+    &--3 {
+      &:before {
+        top: 96px;
+        right: -38px;
+        width: 233px;
+        height: 236px;
+      }
+    }
+
+    &--4 {
+      &:before {
+        top: 96px;
+        right: -33px;
+        width: 228px;
+        height: 236px;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 767px) {
+
+  .hero {
+    margin-bottom: $section-sm;
+  }
+  .myhome {
+    margin-bottom: 10px;
+
+    &__title {
+      margin-bottom: 15px;
+      max-width: 79%;
+      font-size: 30px;
+      line-height: 36px;
+    }
+
+    &__descr {
+      max-width: 100%;
+    }
+
+    &__slide {
+      padding: 25px 30px;
+      min-height: 500px;
+    }
+
+    &__navigation {
+      right: 30px;
+      bottom: 15px;
+      left: 30px;
+    }
+  }
+
+  .complex-cards-wrapper {
+    display: flex;
+    gap: unset;
+  }
+
+  .complex-card {
+    min-height: 250px;
+    line-height: 21px;
+    border-radius: $radius-cards-sm;
+    cursor: pointer;
+
+    &__descr {
+      max-width: 217px;
+    }
+
+    &:after {
+      top: 110px;
+      right: -60px;
+      width: 240px;
+      height: 240px;
+    }
+
+    &--1 {
+      &:before {
+        top: 72px;
+        right: -85px;
+        background-size: 206px;
+      }
+    }
+
+    &--2 {
+      &:before {
+        top: 104px;
+        right: -48px;
+        background-size: 163px;
+      }
+    }
+
+    &--3 {
+      &:before {
+        top: 92px;
+        right: -87px;
+        background-size: 166px;
+      }
+    }
+
+    &--4 {
+      &:before {
+        top: 105px;
+        right: -70px;
+        background-size: 170px;
+      }
+    }
+
+  }
+}

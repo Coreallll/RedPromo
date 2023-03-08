@@ -1,0 +1,127 @@
+.services {
+  margin-bottom: $section;
+
+  &__title {
+    margin-bottom: 65px;
+  }
+}
+
+.services-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(1, 230px);
+  gap: 0 20px;
+}
+
+.services-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 30px;
+  border-radius: $radius-cards;
+  background-color: $back-cards;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: -36px;
+    left: 30px;
+    width: 93px;
+    height: 93px;
+    background-repeat: no-repeat;
+  }
+
+  &--1 {
+    &:after {
+      background-image: url("../img/services-repair.svg");
+    }
+  }
+
+  &--2 {
+    &:after {
+      background-image: url("../img/utilities.svg");
+    }
+  }
+
+  &--3 {
+    &:after {
+      background-image: url("../img/major-repair.svg");
+    }
+  }
+
+  &--4 {
+    &:after {
+      background-image: url("../img/addictional-services.svg");
+    }
+  }
+
+  &__descr {
+    display: block;
+    margin-bottom: 15px;
+    font-weight: 600;
+    line-height: 22px;
+  }
+}
+
+.link-more {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 14px;
+  color: $blue;
+  transition: color 0.15s ease-in-out;
+
+  &:hover {
+    color: $link-hover;
+    transition: color 0.15s ease-in-out;
+
+    &~.arrow-right {
+      stroke: $deep-blue;
+      transition: stroke 0.15s ease-in-out;
+    }
+  }
+}
+
+.arrow-right {
+  display: inline-block;
+  width: 14px;
+  height: 11px;
+  stroke: $blue;
+  stroke-width: 1.75px;
+  transition: stroke 0.15s ease-in-out;
+}
+
+@media (max-width: 1439px) {
+  .services {
+    margin-bottom: $section-md;
+  }
+
+  .services-cards {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 230px);
+    gap: 45px 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .services {
+    margin-bottom: $section-sm;
+    &__title {
+      margin-bottom: 55px;
+    }
+  }
+
+  .services-cards {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(4, 156px);
+    gap: 40px 0;
+    font-size: 16px;
+  }
+
+  .services-card {
+    border-radius: $radius-cards-sm;
+    &__descr {
+      margin-bottom: 10px;
+    }
+  }
+}

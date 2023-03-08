@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RedPromo</title>
+  <link rel="icon" href="./img/favicon.png" type="image/x-icon">
+  <link rel="preload" href="./resources/fonts/Raleway-Medium.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="./css/vendor.css">
+  <link rel="stylesheet" href="./css/main.css">
+  <script defer src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript"></script>
+  <script defer src="./js/vendor.js"></script>
+  <script defer src="./js/scripts.js"></script>
+</head>
+<body class="page__body">
+  @include('partials/header.html')
+  <main class="main">
+    <div class="site-container">
+      @include('partials/hero.html')
+      @include('partials/services.html')
+      @include('partials/news.html')
+      <div class="faq-contacts">
+        @include('partials/faq.html')
+        @include('partials/contacts.html')
+      </div>
+    </div>
+  </main>
+  @include('partials/footer.html')
+</body>
+</html>

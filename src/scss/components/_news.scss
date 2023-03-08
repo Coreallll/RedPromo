@@ -1,0 +1,157 @@
+.news {
+  margin-bottom: $section;
+
+  &__title {
+    margin-bottom: 50px;
+  }
+
+  &__navigation {
+    position: absolute;
+    top: 0;
+    right: 150px;
+  }
+
+  &__prev {
+    margin-right: 15px;
+  }
+}
+
+.arrow-news {
+  width: 40px;
+  height: 40px;
+  &:after {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+.news-container {
+  position: relative;
+}
+
+.btn-news {
+  position: absolute;
+  top: 4px;
+  left: 323px;
+  padding: 9px 36px 9px 20px;
+  border: 1px solid #EBEBEB;
+  border-radius: $btn-radius;
+  transition: color 0.15s ease-in-out;
+
+  &:after {
+    position: absolute;
+    content: '';
+    top: 36%;
+    right: 20px;
+    width: 7px;
+    height: 7px;
+    border: solid $main;
+    border-width: 0 1.5px 1.5px 0;
+    transform: rotate(45deg);
+    transition: border 0.15s ease-in-out, background-color 0.15s ease-in-out;
+  }
+
+  &:hover {
+    background-color: $blue;
+    color: $white;
+    transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+
+    &:after {
+      border-color: $white;
+      transition: border-color 0.15s ease-in-out;
+    }
+  }
+}
+
+.news-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: auto;
+  background-color: $back-cards;
+  border-radius: $radius-cards;
+  cursor: pointer;
+
+  &__top {
+    margin-bottom: 15px;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 25px 30px;
+    height: 100%;
+  }
+
+  &__date {
+    display: inline-block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    line-height: 22px;
+    opacity: 0.33;
+  }
+
+  &__title {
+    font-weight: 600;
+    line-height: 24px;
+  }
+
+}
+
+.img-news {
+  min-height: 200px;
+  border-radius: $radius-cards;
+}
+
+
+@media (max-width: 1439px) {
+
+  .news {
+    margin-bottom: $section-md;
+    &__navigation {
+      right: 24px;
+    }
+  }
+
+  .btn-news {
+    left: 195px;
+  }
+}
+
+@media (max-width: 767px) {
+
+  .news {
+    margin-bottom: $section-sm;
+    &__title {
+      margin-bottom: 33px;
+    }
+
+    &__navigation {
+      right: 16px;
+      top: 5px;
+    }
+
+    &__prev {
+      margin-right: 10px;
+    }
+  }
+
+  .arrow-news {
+    width: 30px;
+    height: 30px;
+
+    &:after {
+      width: 7px;
+      height: 7px;
+    }
+  }
+
+  .btn-news {
+    padding: 8px 34px 8px 16px;
+
+    &:after {
+      right: 16px;
+    }
+  }
+}
